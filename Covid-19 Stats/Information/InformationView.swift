@@ -12,13 +12,22 @@ struct InformationView: View {
     var body: some View {
         VStack {
             HeaderView()
-            Spacer()
-            SymptomsView()
-            VStack(alignment: .leading){
-                Text("Other information to come")
-                Text("No Idea yet")
+            VStack(alignment: .leading) {
+                Spacer()
+                SymptomsView()
+                VStack(alignment: .leading){
+                    Text("Other symptoms may include: ")
+                    Text("Loss of smell, headaches, muscle pains")
+                    
+                    Button(action: {
+                        UIApplication.shared.open(URL(string:
+                            "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")!)
+                    }) {
+                        Text("See more information at www.who.int").padding(.top)
+                    }
+                }.padding()
+                Spacer()
             }
-            Spacer()
         }
     }
 }

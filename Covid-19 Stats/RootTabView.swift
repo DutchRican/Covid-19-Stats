@@ -21,6 +21,11 @@ struct RootTabView: View {
                     Image(systemName: "info.circle")
                     Text("information")
             }
+            PermissionsView()
+                .tabItem{
+                    Image(systemName: "exclamationmark.triangle")
+                    Text("Copyrights")
+            }
         }
     }
 }

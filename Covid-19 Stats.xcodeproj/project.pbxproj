@@ -27,6 +27,7 @@
 		DACEAD2C246223E100CDD26D /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAD2B246223E100CDD26D /* RootTabView.swift */; };
 		DACEAD2E246226F800CDD26D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAD2D246226F800CDD26D /* InformationView.swift */; };
 		DACEAD31246235A600CDD26D /* SymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAD30246235A600CDD26D /* SymptomsView.swift */; };
+		DACEAD40246458FA00CDD26D /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAD3F246458FA00CDD26D /* PermissionsView.swift */; };
 		DAF492B5245A451900576797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF492B4245A451900576797 /* AppDelegate.swift */; };
 		DAF492B7245A451900576797 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF492B6245A451900576797 /* SceneDelegate.swift */; };
 		DAF492BA245A451900576797 /* Covid_19_Stats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF492B8245A451900576797 /* Covid_19_Stats.xcdatamodeld */; };
@@ -57,6 +58,7 @@
 		DACEAD2B246223E100CDD26D /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		DACEAD2D246226F800CDD26D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		DACEAD30246235A600CDD26D /* SymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsView.swift; sourceTree = "<group>"; };
+		DACEAD3F246458FA00CDD26D /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		DAF492B1245A451900576797 /* Covid-19 Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19 Stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF492B4245A451900576797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF492B6245A451900576797 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = Information;
 			sourceTree = "<group>";
 		};
+		DACEAD3E246458E000CDD26D /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				DACEAD3F246458FA00CDD26D /* PermissionsView.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
 		DAF492A8245A451900576797 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 				DAF492B6245A451900576797 /* SceneDelegate.swift */,
 				DAF492BB245A451900576797 /* ContentView.swift */,
 				DACEAD2B246223E100CDD26D /* RootTabView.swift */,
+				DACEAD3E246458E000CDD26D /* Permissions */,
 				DACEAD2F2462357F00CDD26D /* Information */,
 				DACEAD222461EC7E00CDD26D /* Logic */,
 				DACEAD1F2461DD5300CDD26D /* StatDetails */,
@@ -269,6 +280,7 @@
 				DACEAD0B245F57EC00CDD26D /* DataItem.swift in Sources */,
 				DACEAD18245F5FCF00CDD26D /* Double.swift in Sources */,
 				DACEAD13245F5D9B00CDD26D /* PieChart.swift in Sources */,
+				DACEAD40246458FA00CDD26D /* PermissionsView.swift in Sources */,
 				DACEAD06245F11B700CDD26D /* HeaderView.swift in Sources */,
 				DACEAD1A245F643600CDD26D /* PieView.swift in Sources */,
 				DACEAD262461F57B00CDD26D /* SortData.swift in Sources */,
