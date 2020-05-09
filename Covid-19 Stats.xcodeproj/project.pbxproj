@@ -148,6 +148,15 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
+		DACEAD4124674CA600CDD26D /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				DA936A7C245B4F1B001D235B /* CountryMap.swift */,
+				DA936A7A245B1E8A001D235B /* ResponseDataType.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
 		DAF492A8245A451900576797 = {
 			isa = PBXGroup;
 			children = (
@@ -178,8 +187,7 @@
 				DACEAD1F2461DD5300CDD26D /* StatDetails */,
 				DACEAD09245F57D100CDD26D /* PieCharts */,
 				DACEAD04245F118500CDD26D /* Headers */,
-				DA936A7C245B4F1B001D235B /* CountryMap.swift */,
-				DA936A7A245B1E8A001D235B /* ResponseDataType.swift */,
+				DACEAD4124674CA600CDD26D /* DataTypes */,
 				DAF492BD245A451F00576797 /* Assets.xcassets */,
 				DAF492C2245A451F00576797 /* LaunchScreen.storyboard */,
 				DAF492C5245A451F00576797 /* Info.plist */,

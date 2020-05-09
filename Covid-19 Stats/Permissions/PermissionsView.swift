@@ -15,26 +15,28 @@ struct PermissionsView: View {
             Spacer()
             VStack(alignment: .leading){
                 Text("Data for the pie charts was sourced from the excellent work found here:")
+                    .padding(.top)
                 Button("cov19.cc"){
                     UIApplication.shared.open(URL(string: "https://cov19.cc/")!)
-                }.padding([.top, .bottom])
-                Text("This application is merely consuming their API that allows access to the data.").padding(.top)
-            }.padding([.leading, .trailing])
+                }.font(.title)
+                Text("This application is merely consuming their API that allows access to the data.").padding([.top, .bottom])
+            }
             
-            Divider().padding(.bottom)
+            Divider()
             VStack(alignment: .leading){
-                    Text("Images for the symptoms were sourced from:")
-                    
-                    Button("Goats and Soda article"){
-                        UIApplication.shared.open(URL(string: "https://www.npr.org/sections/goatsandsoda/2020/05/06/850707907/from-loss-of-smell-to-covid-toes-what-experts-are-learning-about-symptoms")!)
-                    }.padding(.top)
-                }.padding([.leading, .trailing])
-            
+                Text("Images for the symptoms were sourced from:")
+                    .padding(.top)
+                
+                Button("Goats and Soda article"){
+                    UIApplication.shared.open(URL(string: "https://www.npr.org/sections/goatsandsoda/2020/05/06/850707907/from-loss-of-smell-to-covid-toes-what-experts-are-learning-about-symptoms")!)
+                }.font(.title)
+            }
+            Divider()
             Spacer()
             VStack{
-                Button("The source code for this application is available"){
+                Button("Here's the Source Code"){
                     UIApplication.shared.open(URL(string: "https://github.com/DutchRican/Covid-19-Stats")!)
-                }
+                }.font(.title)
             }
             Spacer()
         }
