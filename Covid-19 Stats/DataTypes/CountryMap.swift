@@ -17,6 +17,6 @@ let countryMap = [
      "antarctica" : "Antartica",
      "canada" : "Canada",
      "asia" : "Asia",
-     "world" : "World",
+     "World" : "Global Stats",
      "china" : "China"
 ]

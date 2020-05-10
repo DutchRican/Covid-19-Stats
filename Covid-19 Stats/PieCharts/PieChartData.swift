@@ -37,14 +37,12 @@ class PieChartData: ObservableObject {
         for index in 0..<data.count {
             let slide = SlideData()
             slide.data = DataItem(title: data[index].title, value: data[index].value, color: data[index].color)
-            let percentage = data[index].value / total * 100
+            let percentage = total > 0.0 ? data[index].value / total * 100 : 0
             slide.percentage = String(format: "%.1f", percentage)
-            
             slide.startAngle = .degrees(currentAngle)
-            let angle = data[index].value * 360 / total
+            let angle = total > 0.0 ? data[index].value * 360 / total : 0
             currentAngle += angle
             slide.endAngle = .degrees(currentAngle)
-            
             slides.append(slide)
         }
         return slides

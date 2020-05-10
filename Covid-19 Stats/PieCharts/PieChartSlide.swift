@@ -22,6 +22,7 @@ public struct PieChartSlide: View {
          
         var path = Path()
         path.move(to: CGPoint(x: centerX, y: centerY))
+        print("\(slideData.startAngle) -- \(slideData.endAngle)")
         path.addArc(center: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: slideData.startAngle, endAngle: slideData.endAngle, clockwise: false)
         return path
     }

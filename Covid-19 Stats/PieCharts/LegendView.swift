@@ -18,7 +18,13 @@ struct LegendView: View {
                         .frame(width: 20, height: 20)
                         .foregroundColor(self.legend.items[index].color)
                     VStack (alignment: .leading){
-                        Text(self.legend.items[index].title)
+                        HStack{ Text(self.legend.items[index].title)
+                            if !self.legend.items[index].subTitle.isEmpty {
+                                Text(self.legend.items[index].subTitle).font(.system(size: 10))
+                            } else {
+                                EmptyView()
+                            }
+                        }
                         Text(self.legend.items[index].value.withCommas()).font(.caption)
                     }
                 }
@@ -30,6 +36,6 @@ struct LegendView: View {
 
 struct LegendView_Previews: PreviewProvider {
     static var previews: some View {
-        LegendView(legend: LegendData(items: [(title: "test1", value: 249.0, color: Color.red), (title: "here we are", value: 522.0, color: Color.green)]))
+        LegendView(legend: LegendData(items: [(title: "test1", subTitle: "\(2342)" ,value: 249.0, color: Color.red), (title: "here we are", subTitle: "", value: 522.0, color: Color.green)]))
     }
 }

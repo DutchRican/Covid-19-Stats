@@ -11,16 +11,20 @@ import SwiftUI
 
 class DataItem {
     var title: String = ""
+    var subTitle: String = ""
     var value: Double = 0.0
     var color: Color = .blue
     
-    init(title: String, value: Double, color: Color? = nil) {
+    init(title: String, value: Double, subTitle: String = "", color: Color? = nil) {
         self.title = title
         self.value = value
+        self.subTitle = subTitle
         if let color = color {
             self.color = color
         } else {
             self.color = .random()
         }
     }
+    
+    
 }

@@ -10,5 +10,5 @@ import Foundation
 import SwiftUI
 
 struct LegendData{
-    var items:[(title: String, value: Double, color: Color)]
+    var items:[(title: String, subTitle: String, value: Double, color: Color)]
 }

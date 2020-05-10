@@ -11,7 +11,7 @@ import SwiftUI
 
 struct DataRequest {
     //    @Binding var items:Regions?
-    @Binding var items:[(name: String, country:Country)]
+    @Binding var items:[Country]
     func loadData(){
         guard let url = URL(string: "https://cov19.cc/report.json") else {return}
         let config = URLSessionConfiguration.default
@@ -22,14 +22,13 @@ struct DataRequest {
                 do {
                     let decResponse = try JSONDecoder().decode(CovidData.self,from: data)
                     DispatchQueue.main.async {
-                        var temp:[(name: String, country:Country)] = []
-                        temp.append((name: "Global Stats", country: decResponse.regions.world))
-                        temp.append((name: "United States", country: decResponse.regions.unitedstates))
-                        temp.append((name: "Canada", country: decResponse.regions.canada))
-                        temp.append((name: "China", country: decResponse.regions.china))
-                        temp.append((name: "Australia", country: decResponse.regions.australia))
+                        var temp:[Country] = []
+                        temp.append(decResponse.regions.world)
+                        temp.append(decResponse.regions.unitedstates)
+                        temp.append(decResponse.regions.canada)
+                        temp.append(decResponse.regions.china)
+                        temp.append(decResponse.regions.australia)
                         self.items = temp
-                        //                        self.items = decResponse.regions
                     }
                 } catch{
                     print(error)
