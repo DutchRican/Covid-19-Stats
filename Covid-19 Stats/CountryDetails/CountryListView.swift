@@ -10,17 +10,24 @@ import SwiftUI
 
 struct CountryListView: View {
     var items: [CountryTotals]
+    @State var filter: String = ""
     
     var body: some View {
         VStack{
-            List{ ForEach(items.sorted{$0.confirmed > $1.confirmed}){ item in
+            List{
+                SearchView(filter: $filter)
+                ForEach(filteredItems(items: items.sorted{$0.confirmed > $1.confirmed}, filter: filter)){ item in
                 ListSectionView(totals: Totals(confirmed: item.confirmed, daily_confirmed: item.daily_confirmed, daily_deaths: item.daily_deaths, deaths: item.deaths, tests: item.tests, recovered: item.recovered, critical: item.critical), title: item.state ?? item.country)
                 }
             }
             Spacer()
         }
     }
-    
+}
+
+func filteredItems(items: [CountryTotals], filter: String) -> [CountryTotals] {
+    if filter.isEmpty {return items}
+    return items.filter{ $0.country.contains(filter) || ($0.state ?? "").contains(filter) }
 }
 
 struct CountryListView_Previews: PreviewProvider {
