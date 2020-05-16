@@ -12,10 +12,13 @@ import Foundation
 func dataArray(totals: Totals?) -> [DataItem] {
     var data:[DataItem] = []
     guard let safeTotals = totals else {return data}
-    
-    data.append(DataItem(title: "Active", value:Double(safeTotals.confirmed - safeTotals.deaths - safeTotals.recovered), subTitle: "+ \(safeTotals.daily_confirmed.withCommas())" , color: .yellow))
-    data.append(DataItem(title: "Deaths", value: Double(safeTotals.deaths), subTitle: "+ \(safeTotals.daily_deaths.withCommas())", color: .red))
-    data.append(DataItem(title: "Recovered", value: Double(safeTotals.recovered), color: .green))
-    data.append(DataItem(title: "Critical", value: Double(safeTotals.critical), color: .orange))
+    let deaths = safeTotals.deaths >= 0 ? safeTotals.deaths : 0
+     let recovered = safeTotals.recovered >= 0 ? safeTotals.recovered : 0
+    let critical = safeTotals.critical >= 0 ? safeTotals.critical : 0
+    let confirmed = safeTotals.confirmed >= 0 ? safeTotals.confirmed : 0
+    data.append(DataItem(title: "Active", value:Double(confirmed - deaths - recovered), subTitle: safeTotals.daily_confirmed > 0 ?  "+ \(safeTotals.daily_confirmed.withCommas())" : "", color: .yellow))
+    data.append(DataItem(title: "Deaths", value: Double(deaths), subTitle: safeTotals.daily_deaths > 0 ? "+ \(safeTotals.daily_deaths.withCommas())" : "", color: .red))
+    data.append(DataItem(title: "Recovered", value: Double(recovered), color: .green))
+    data.append(DataItem(title: "Critical", value: Double(critical), color: .orange))
     return data
 }
