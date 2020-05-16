@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA79689924707927007BB003 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA79689824707927007BB003 /* SearchView.swift */; };
 		DA936A7B245B1E8A001D235B /* ResponseDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936A7A245B1E8A001D235B /* ResponseDataType.swift */; };
 		DA936A7D245B4F1B001D235B /* CountryMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA936A7C245B4F1B001D235B /* CountryMap.swift */; };
 		DACEAD06245F11B700CDD26D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAD05245F11B700CDD26D /* HeaderView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA79689824707927007BB003 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DA936A7A245B1E8A001D235B /* ResponseDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataType.swift; sourceTree = "<group>"; };
 		DA936A7C245B4F1B001D235B /* CountryMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMap.swift; sourceTree = "<group>"; };
 		DACEAD05245F11B700CDD26D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				DAF492B4245A451900576797 /* AppDelegate.swift */,
 				DAF492B6245A451900576797 /* SceneDelegate.swift */,
 				DAF492BB245A451900576797 /* ContentView.swift */,
+				DA79689824707927007BB003 /* SearchView.swift */,
 				DACEAD2B246223E100CDD26D /* RootTabView.swift */,
 				DACEAD442467565500CDD26D /* CountryDetails */,
 				DACEAD3E246458E000CDD26D /* Permissions */,
@@ -318,6 +321,7 @@
 				DACEAD0F245F598900CDD26D /* PieChartData.swift in Sources */,
 				DACEAD2A246209C200CDD26D /* Int.swift in Sources */,
 				DA936A7B245B1E8A001D235B /* ResponseDataType.swift in Sources */,
+				DA79689924707927007BB003 /* SearchView.swift in Sources */,
 				DACEAD31246235A600CDD26D /* SymptomsView.swift in Sources */,
 				DAF492BC245A451900576797 /* ContentView.swift in Sources */,
 				DAF492BA245A451900576797 /* Covid_19_Stats.xcdatamodeld in Sources */,
