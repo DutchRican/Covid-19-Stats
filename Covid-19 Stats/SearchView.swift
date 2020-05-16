@@ -15,8 +15,12 @@ struct SearchView: View {
             Text("Filter results: ")
                 .font(.system(size: 20)).bold()
             TextField("Example: Global", text: $filter).foregroundColor(.blue).font(.system(size: 20))
+            Image(systemName: "clear")
+                .resizable().frame(width: 25, height: 25)
+                .onTapGesture {
+                    self.filter = ""
+            }
         }
-        .padding([.top, .bottom, .leading])
     }
 }
 
