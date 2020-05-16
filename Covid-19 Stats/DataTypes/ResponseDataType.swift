@@ -11,53 +11,27 @@ import Foundation
 
 struct CovidData: Codable {
     var last_updated: String
-    var regions: Regions
-    
-    struct parsedData {
-        var name: String
-        var totals: Totals
-    }
-}
-
-struct Regions: Codable {
-    var world: Country
-    var unitedstates: Country
-    var canada: Country
-    var china: Country
-    var australia: Country
-    //    var asia: CountryMapper
-    //    var europe: CountryMapper
-    //    var antarctica: CountryMapper
-    //    var oceania: CountryMapper
-    //    var northamerica: CountryMapper
-    //    var southamerica: CountryMapper
+    var regions:[String: Country]
 }
 
 struct Country: Codable, Identifiable {
     var id: UUID?
-    var name: String
-    var totals: Totals
-    var list: [CountryTotals]
+    var totals: Totals?
+    var list: [CountryTotals]?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.totals = try container.decode(Totals.self, forKey: .totals)
-        self.list = try container.decode([CountryTotals].self, forKey: .list)
+        self.totals = try? container.decode(Totals.self, forKey: .totals)
+        self.list = try? container.decode([CountryTotals].self, forKey: .list)
         self.id = UUID()
     }
     
-    init(name: String, totals: Totals, list: [CountryTotals]){
-        self.name = name
+    //  for testing purposes
+    init(totals: Totals, list: [CountryTotals]){
         self.totals = totals
         self.list = list
         self.id = UUID()
     }
-}
-
-struct CountryMapper: Codable {
-    var name: String
-    var totals: Array<String>
 }
 
 struct Totals: Codable {
@@ -99,7 +73,7 @@ struct CountryTotals: Codable, Identifiable {
         self.country_code = try container.decode(String.self, forKey: .country_code)
         self.id = UUID()
     }
-    
+    // for testing purposes
     init(state: String, country: String, confirmed: Int, daily_confirmed: Int, daily_deaths: Int, deaths: Int, tests: Int, recovered: Int, critical: Int, last_updated: String, country_code: String){
         self.state = state
         self.country = country

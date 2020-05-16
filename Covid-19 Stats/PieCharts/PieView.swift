@@ -39,7 +39,7 @@ struct PieView: View {
 struct PieView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PieView(data: [DataItem(title: "test", value: 0, color: .green)], title: "Testing")
+            PieView(data: [DataItem(title: "test", value: -1, color: .green)], title: "Testing")
             PieView(data: [DataItem(title: "test", value: 24.0, subTitle: "+ \(222.withCommas())", color: .red)], title: "testing", legend: true)
         }
     }

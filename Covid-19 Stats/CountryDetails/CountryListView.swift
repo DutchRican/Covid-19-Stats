@@ -10,9 +10,10 @@ import SwiftUI
 
 struct CountryListView: View {
     var items: [CountryTotals]
+    
     var body: some View {
         VStack{
-            List{ ForEach(items){ item in
+            List{ ForEach(items.sorted{$0.confirmed > $1.confirmed}){ item in
                 ListSectionView(totals: Totals(confirmed: item.confirmed, daily_confirmed: item.daily_confirmed, daily_deaths: item.daily_deaths, deaths: item.deaths, tests: item.tests, recovered: item.recovered, critical: item.critical), title: item.state ?? item.country)
                 }
             }

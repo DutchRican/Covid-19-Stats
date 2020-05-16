@@ -7,16 +7,8 @@
 //
 
 let countryMap = [
-    "europe" : "Europe",
-     "africa" : "Africa",
-     "australia" : "Australia",
      "southamerica" : "South America",
      "unitedstates" : "United States",
-     "northamerica" : "Nort America",
-     "oceania" : "Oceania",
-     "antarctica" : "Antartica",
-     "canada" : "Canada",
-     "asia" : "Asia",
-     "World" : "Global Stats",
-     "china" : "China"
+     "northamerica" : "North America",
+     "world" : "Global Stats",
 ]

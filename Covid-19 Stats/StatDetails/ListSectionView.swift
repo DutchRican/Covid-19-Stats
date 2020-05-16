@@ -12,7 +12,6 @@ struct ListSectionView: View {
     var totals: Totals?
     var title: String
     var body: some View {
-        print(title)
         return Section(header:Text(title)){
             PieView(data: dataArray(totals: totals), title: "\((totals?.confirmed ?? 0).withCommas()) confirmed cases", legend: true)
                 .padding(.bottom)
