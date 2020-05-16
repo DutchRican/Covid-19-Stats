@@ -55,7 +55,7 @@ struct CountryTotals: Codable, Identifiable {
     var tests: Int
     var recovered: Int
     var critical: Int
-    var last_updated: String
+    var last_updated: String?
     var country_code: String
     
     init(from decoder: Decoder) throws {
@@ -69,7 +69,7 @@ struct CountryTotals: Codable, Identifiable {
         self.tests = try container.decode(Int.self, forKey: .tests)
         self.recovered = try container.decode(Int.self, forKey: .recovered)
         self.critical = try container.decode(Int.self, forKey: .critical)
-        self.last_updated = try container.decode(String.self, forKey: .last_updated)
+        self.last_updated = try? container.decode(String.self, forKey: .last_updated)
         self.country_code = try container.decode(String.self, forKey: .country_code)
         self.id = UUID()
     }
