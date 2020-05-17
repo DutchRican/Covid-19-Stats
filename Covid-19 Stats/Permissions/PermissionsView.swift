@@ -11,7 +11,7 @@ import SwiftUI
 struct PermissionsView: View {
     var body: some View {
         VStack{
-            HeaderView()
+            HeaderView(items: .constant([]), isLoading: .constant(false))
             Spacer()
             VStack(alignment: .leading){
                 Text("Data for the pie charts was sourced from the excellent work found here:")

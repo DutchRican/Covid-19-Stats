@@ -16,11 +16,11 @@ struct SearchView: View {
                 .font(.system(size: 20)).bold()
             TextField("Example: Global", text: $filter).foregroundColor(.blue).font(.system(size: 20))
             Image(systemName: "clear")
-                .resizable().frame(width: 25, height: 25)
+                .resizable().frame(width: 20, height: 20)
                 .onTapGesture {
                     self.filter = ""
             }
-        }
+        }.frame(height: 50)
     }
 }
 
