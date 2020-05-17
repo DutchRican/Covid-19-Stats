@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct HeaderView: View {
+      @Binding var items:[(name: String, country: Country)]
+      @Binding var isLoading:Bool
+    
     var body: some View {
         VStack {
-//            Image("Title")
-//                .resizable()
-//                .scaledToFit()
             Text("Covid Stats")
                 .font(.system(size: 50))
                 .fontWeight(.semibold)
@@ -22,11 +22,15 @@ struct HeaderView: View {
             Text("Updated from cov19.cc")
         }
         .padding()
+        .onTapGesture(count: 2, perform: {DataRequest(items: self.$items, isLoading: self.$isLoading).loadData()
+            self.isLoading = true
+        })
     }
+    
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(items: .constant([]), isLoading: .constant(false))
     }
 }

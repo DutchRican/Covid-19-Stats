@@ -11,6 +11,7 @@ import SwiftUI
 
 struct DataRequest {
     @Binding var items:[(name: String, country: Country)]
+    @Binding var isLoading:Bool
     func loadData(){
         guard let url = URL(string: "https://cov19.cc/report.json") else {return}
         let config = URLSessionConfiguration.default
@@ -28,6 +29,7 @@ struct DataRequest {
                         self.items = temp.sorted{
                             $0.country.totals?.confirmed ?? 0 > $1.country.totals?.confirmed ?? 0
                         }
+                        self.isLoading = false
                     }
                 } catch{
                     print(error)
@@ -38,3 +40,5 @@ struct DataRequest {
         }.resume()
     }
 }
+
+

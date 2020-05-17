@@ -11,7 +11,7 @@ import SwiftUI
 struct InformationView: View {
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(items: .constant([]), isLoading: .constant(false))
             Spacer()
             VStack(alignment: .leading) {
                 ZStack{
@@ -35,6 +35,10 @@ struct InformationView: View {
                     }) {
                         Text("See more information at www.who.int").padding(.top)
                     }
+                }.padding()
+                Divider()
+                VStack {
+                    Text("You may force a data refresh by double tapping the title while on the Stats view.")
                 }.padding()
             }
             Spacer()
