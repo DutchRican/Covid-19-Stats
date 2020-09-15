@@ -17,7 +17,7 @@ struct DataRequest {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         let session = URLSession.init(configuration: config)
-        session.dataTask(with: url) { data, response, error in
+        session.dataTask(with: url) { data, _, _  in
             if let data = data {
                 do {
                     let decResponse = try JSONDecoder().decode(CovidData.self,from: data)

@@ -20,7 +20,9 @@ struct SearchView: View {
                 .onTapGesture {
                     self.filter = ""
             }
-        }.frame(height: 50)
+        }
+        .padding([.leading, .trailing])
+        .frame(height: 40)
     }
 }
 

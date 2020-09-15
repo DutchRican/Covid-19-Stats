@@ -20,8 +20,9 @@ struct HeaderView: View {
                 .foregroundColor(Color("TitleColor"))
                 
             Text("Updated from cov19.cc")
+            Divider()
         }
-        .padding()
+        .padding([.leading, .trailing])
         .onTapGesture(count: 2, perform: {DataRequest(items: self.$items, isLoading: self.$isLoading).loadData()
             self.isLoading = true
         })

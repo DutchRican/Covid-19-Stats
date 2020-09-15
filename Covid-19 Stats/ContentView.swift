@@ -20,7 +20,6 @@ struct ContentView: View {
             ZStack {
                 NavigationView {
                     VStack {
-                        SearchView(filter: $filter)
                         List{
                             ForEach(filteredItems(items, filter: filter), id: \.self.name) {(name, country) in
                                 Section(header: Text("\(name)").foregroundColor(Color("TitleColor"))){
@@ -31,12 +30,13 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .navigationBarHidden(true)
-                        .navigationBarTitle("")
+                        .navigationBarItems(leading: SearchView(filter: $filter))
                     }
                 }
                 if isLoading {
-                    loadingView(shouldAnimate: true)
+                    ProgressView("Fetching data")
+                        .scaleEffect(1.5, anchor: .center)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                 }
             }
         }
@@ -54,12 +54,11 @@ func filteredItems(_ items:[(name: String, country: Country)], filter: String) -
     return items.filter{ $0.name.contains(filter)}
 }
 
-
-let test_items:[(name: String, Country)] = [(name: "Test", Country( totals: Totals(confirmed: 34, daily_confirmed: 1, daily_deaths: 2, deaths: 10, tests: 33, recovered: 10, critical: -1), list: [CountryTotals(state: "Anguilla", country: "United Kingdom", confirmed: 3, daily_confirmed: 1, daily_deaths: 2, deaths: 2, tests: 44, recovered: 23, critical: 3, last_updated: "2020-05-02T02:32:27", country_code: "ai")])),(name: "Test2", Country(totals: Totals(confirmed: 34, daily_confirmed: 1, daily_deaths: 2, deaths: 10, tests: 33, recovered: 10, critical: 5), list: [CountryTotals(state: "Anguilla", country: "United Kingdom", confirmed: 3, daily_confirmed: 1, daily_deaths: 2, deaths: 2, tests: 44, recovered: 23, critical: -1, last_updated: "2020-05-02T02:32:27", country_code: "ai")]))]
-
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let test_items:[(name: String, Country)] = [(name: "Test", Country( totals: Totals(confirmed: 34, daily_confirmed: 1, daily_deaths: 2, deaths: 10, tests: 33, recovered: 10, critical: -1), list: [CountryTotals(state: "Anguilla", country: "United Kingdom", confirmed: 3, daily_confirmed: 1, daily_deaths: 2, deaths: 2, tests: 44, recovered: 23, critical: 3, last_updated: "2020-05-02T02:32:27", country_code: "ai")])),(name: "Test2", Country(totals: Totals(confirmed: 34, daily_confirmed: 1, daily_deaths: 2, deaths: 10, tests: 33, recovered: 10, critical: 5), list: [CountryTotals(state: "Anguilla", country: "United Kingdom", confirmed: 3, daily_confirmed: 1, daily_deaths: 2, deaths: 2, tests: 44, recovered: 23, critical: -1, last_updated: "2020-05-02T02:32:27", country_code: "ai")]))]
+       return Group {
             ContentView(items:test_items)
             ContentView(items:test_items)
                 .colorScheme(.dark)
@@ -68,5 +67,6 @@ struct ContentView_Previews: PreviewProvider {
         }
     }
 }
+#endif
 
 

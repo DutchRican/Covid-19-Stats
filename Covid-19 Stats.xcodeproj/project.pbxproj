@@ -469,6 +469,7 @@
 				DEVELOPMENT_TEAM = WG7S4NXZ8F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Covid-19 Stats/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +490,7 @@
 				DEVELOPMENT_TEAM = WG7S4NXZ8F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Covid-19 Stats/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

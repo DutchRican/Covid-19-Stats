@@ -36,8 +36,8 @@ struct Country: Codable, Identifiable {
 
 struct Totals: Codable {
     var confirmed: Int
-    var daily_confirmed: Int
-    var daily_deaths: Int
+    var daily_confirmed: Int?
+    var daily_deaths: Int?
     var deaths: Int
     var tests: Int
     var recovered: Int

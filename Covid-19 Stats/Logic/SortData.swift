@@ -16,8 +16,11 @@ func dataArray(totals: Totals?) -> [DataItem] {
      let recovered = safeTotals.recovered >= 0 ? safeTotals.recovered : 0
     let critical = safeTotals.critical >= 0 ? safeTotals.critical : 0
     let confirmed = safeTotals.confirmed >= 0 ? safeTotals.confirmed : 0
-    data.append(DataItem(title: "Active", value:Double(confirmed - deaths - recovered), subTitle: safeTotals.daily_confirmed > 0 ?  "+ \(safeTotals.daily_confirmed.withCommas())" : "", color: .yellow))
-    data.append(DataItem(title: "Deaths", value: Double(deaths), subTitle: safeTotals.daily_deaths > 0 ? "+ \(safeTotals.daily_deaths.withCommas())" : "", color: .red))
+    let daily_confirmed = safeTotals.daily_confirmed ?? 0
+    let daily_deaths = safeTotals.daily_deaths ?? 0
+    
+    data.append(DataItem(title: "Active", value:Double(confirmed - deaths - recovered), subTitle: daily_confirmed > 0 ?  "+ \(daily_confirmed.withCommas())" : "", color: .yellow))
+    data.append(DataItem(title: "Deaths", value: Double(deaths), subTitle: daily_deaths > 0 ? "+ \(daily_deaths.withCommas())" : "", color: .red))
     data.append(DataItem(title: "Recovered", value: Double(recovered), color: .green))
     data.append(DataItem(title: "Critical", value: Double(critical), color: .orange))
     return data

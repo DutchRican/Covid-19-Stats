@@ -14,12 +14,14 @@ struct CountryListView: View {
     
     var body: some View {
         VStack{
-            SearchView(filter: $filter)
+//            SearchView(filter: $filter)
             List{
                 ForEach(filteredItems(items: items.sorted{$0.confirmed > $1.confirmed}, filter: filter)){ item in
                 ListSectionView(totals: Totals(confirmed: item.confirmed, daily_confirmed: item.daily_confirmed, daily_deaths: item.daily_deaths, deaths: item.deaths, tests: item.tests, recovered: item.recovered, critical: item.critical), title: item.state ?? item.country)
                 }
-            }.navigationBarTitle("")
+            }
+            .navigationBarItems(leading: SearchView(filter: $filter))
+            .padding(.top, -50)
         }
     }
 }
